@@ -2,6 +2,7 @@ html {
   font-size: 16px;
 }
 body {
+  background-color: #15171A;
   margin: 0%;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
@@ -14,10 +15,9 @@ body {
 .header {
   padding-top: 6em;
 }
-/* main nav bar */
+/* main navbar */
 .navbar {
-  background-color: var(--light-color);
-  border-top: var(--red-color) 0.3em solid;
+  background-color: #00D299;
   font-weight: 600;
 }
 .nav-link {
@@ -26,28 +26,22 @@ body {
 }
 
 /* second navbar */
-.logo-white{
-  vertical-align: middle;
-}
 .dropdown:hover > .dropdown-menu {
   display: block;
 }
 .dropdown > .dropdown-toggle:active {
-  /*Without this, clicking will make it sticky*/
   pointer-events: none;
 }
 .dropdown-item {
   font-size: 0.8rem;
 }
 .category-navbar ul {
-  background-color: var(--red-color);
-  border: 0.21em solid var(--red-color);
+  background-color: #275486;
   font-family: "Roboto Slab", serif;
 }
 .category-navbar ul a,
 .category-navbar ul li {
-  color: var(--red-color);
-
+  color: #275486;
 }
 .category-navbar ul:first-child li span {
   font-size: 1.2rem;
@@ -60,18 +54,18 @@ body {
   background-image: url("../images/website-images/autoparts.webp");
   background-size: 40em 14em;
 }
-/* this class is used for giving bg-color in the slider */
+/* this class is used to give bg-color to the slider */
 .corousel-bg {
   top: 0em;
   height: 100%;
   width: 100%;
   background-color: rgba(8, 65, 92, 0.93);
 }
-/* autoparts pictures */
+/* Auto parts pictures */
 .carousel-item {
   z-index: 1;
 }
-/* Usp text on left in corousel */
+/* Usp text on the left of the corousel */
 .usp {
   top: 45%;
   z-index: 2;
@@ -79,20 +73,25 @@ body {
   left: 2%;
 }
 
-/* for all h1 headings in body main headings */
+/* for all h1 headings in the body */
 h1 {
   font-family: "Roboto Slab", serif;
   color: var(--red-color);
 }
+div p {
+  color: var(--light-color);
+}
 /* sub category heading */
 h2 {
-  color: var(--blue-color);
+  color: var(--light-color);
   text-align: center;
 }
 
-/* discount heading on slider */
+.card-text {
+  color: var(--blue-color);
+}
 .carousel-item h3 span {
-  color: var(--red-color);
+
   font-weight: bold;
   font-size: 2.8rem;
   text-shadow: none;
@@ -102,17 +101,22 @@ h2 {
   text-shadow: 1px 2px var(--red-color);
 }
 
-/* giving bg-color to the each category bt targeting their div */
+h6 {
+  color: var(--light-color);
+}
+
+/* giving bg-color to each category by targetting their div */
 .all-category > div:nth-child(1),
 .all-category > div:nth-child(3) {
-  background-color: var(--peach-color);
+  background-color: rgba(238, 229, 233, 0.1);
 }
 .all-category > div:nth-child(2),
 .all-category > div:nth-child(4) {
-  background-color: rgba(238, 229, 233, 0.1);
+  background-color: #265488;
+  rgba(238, 229, 233, 0.1);
 }
 
-/* buttons in product card */
+/* buttons in the product card */
 .btn {
   background-color: var(--blue-color);
   color: var(--light-color);
@@ -123,14 +127,13 @@ h2 {
   font-weight: bold;
 }
 .card:hover {
-  /* box-shadow: 3px 3px 13px #bdbdbd; */
   box-shadow: 3px 3px 13px var(--red-color);
 
 }
 /* section that contains footer content */
 .footer-section {
   font-size: 0.8rem;
-  background-color: var(--blue-color);
+  background-color: #32383E;
   color: var(--light-color);
 }
 /* anchor tags in footer */
@@ -144,14 +147,14 @@ footer a:hover {
   color: var(--red-color);
 }
 .copyright-section {
-  background-color: var(--red-color);
+  background-color: #32383E;
   color: var(--light-color);
   text-align: center;
 }
 
-/* form page Styling */
+/* form page styling */
 
-/* form body color     */
+/* form body color */
 #form-bg{
   background-color: var(--blue-color);
 }
@@ -179,7 +182,7 @@ footer a:hover {
   left: "0px";
 }
 
-/* form styling    */
+/* form styling */
 .wrapper {
   width: 380px;
   height: 550px;
@@ -191,7 +194,7 @@ footer a:hover {
   border-radius: 30px;
   box-shadow: 2px 11px 21px 14px rgba(0, 0, 0, 0.9);
 }
-/* styling of  button  */
+/* styling of button */
 .button {
   width: 220px;
   margin: 35px auto;
@@ -201,7 +204,7 @@ footer a:hover {
   background-color: var(--blue-color);
 
 }
-/* for button styling  */
+/* form button styling  */
 .toggle-butn {
   padding: 10px 30px;
   cursor: pointer;
@@ -224,7 +227,6 @@ footer a:hover {
   background: var(--red-color);
 }
 
-/* styling of form  */
 .form-container form {
   top: 100px;
   position: absolute;
@@ -273,12 +275,12 @@ footer a:hover {
   position: absolute;
 }
 
-/* styling of error show in js  */
+/* styling of error shown */
 .block {
   display: block;
   color: var(--red-color);
 }
-/* small tag contains error statements */
+/* Tags containing error statements */
 #name-data,
 #email-data,
 #paswd-data,
@@ -326,19 +328,19 @@ footer a:hover {
   text-align: center;
   color: var(--light-color);
 }
- /* cart icon on nav bar */
+ /* cart icon on navbar */
 .cart {
   font-size: 15px;
   margin-left: 20px;
 }
-/* class for both cart icon  and login btn */
+/* class for both cart icon and login btn */
 #user-cart, .login-btn{
   cursor: pointer;
 }
 
 .title {
   font-weight: bold;
-  color: var(--blue-color);
+  color: var(--light-color);
 }
 .sec-product-price {
   color: var(--red-color);
@@ -346,7 +348,7 @@ footer a:hover {
   font-weight: bold;
 }
 .product-name{
-  color: var(--blue-color);
+  color: var(--light-color);
 }
 /* Product Page */
 .products-row {
@@ -384,7 +386,7 @@ footer a:hover {
   transition: 0.5s;
 }
 .similar-product-heading{
-  color: var(--blue-color);
+  color: var(--light-color);
   font-weight: bold;
 }
 #loader {
@@ -424,7 +426,7 @@ footer a:hover {
   align-content: center;
   margin: 12px;
 }
-/* parent span on add to cart icon show quantity */
+/* Showing quantity on cart icon*/
 .total-quantity, .total-quantity-1 {
   position: relative;
   left: 49px;
@@ -435,7 +437,6 @@ footer a:hover {
   padding: 4px 5px;
   border-radius: 20px;
 }
-/* child span store quantity */
 .total-quantity span {
   padding: 2px 4px;
 }
@@ -468,11 +469,11 @@ footer a:hover {
 }
 
 /*
-   start media quries for different screen sizes
+   start of media queries for different screen sizes
 */
 
 @media (max-width: 576px) {
-  /* user cart table responsiveness */
+  /* user cart responsiveness */
 
   .price {
     display: none;
@@ -491,7 +492,7 @@ footer a:hover {
     font-size: 1.75rem;
   }
 }
-/* zoom effect on categories images */
+/* zoom effect on product images */
 #zoom-img{
   -webkit-transition: all 0.4s linear;
   transition: all 0.4s linear; 
@@ -505,7 +506,7 @@ footer a:hover {
 }
 
 @media screen and (max-width: 800px) {
-  /* responsive font size for tagline and usp */
+  /* Font size for tagline and usp */
   .usp {
     top: 23%;
     font-size: 2.5rem;
@@ -514,7 +515,7 @@ footer a:hover {
 }
 
 @media screen and (max-width: 620px) {
-  /* responsive font size for tagline and usp */
+  /* Font size for tagline and usp */
   .usp {
     top: 25%;
     font-size: 1.6rem;

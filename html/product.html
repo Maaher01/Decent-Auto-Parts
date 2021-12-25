@@ -7,15 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
 
-    <!-- add icon link -->
-    <link rel="icon" href="../assets/images/website-images/logo.png" type="image/x-icon">
-
-    <!--bootsrap  Styles sheet  -->
+    <!--bootsrap style sheets-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <!-- style sheet for complete website -->
-    <link rel="stylesheet" href="../assets/css/exotic-parts.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 
     <!-- font family Montserrat and roboto slab -->
     <link
@@ -32,17 +29,14 @@
 
 <body>
     <div id="loader">
-        <img id="loader-image" src="../assets/images/website-images/Spinner-1s-200px.gif" alt="Loading.."/>
+        <img id="loader-image" src="../assets/images/website-images/Spinner-1s-200px.gif" alt="Loading.." />
     </div>
     <header class="header">
-        <!-- first nav bar with anchor tags  contains logo, about, contact us , login and add to cart -->
+        <!-- first navbar contains about, contact us , login and add to cart -->
         <nav class="navbar navbar-expand-lg fixed-top p-0 font-weight-bold mb-4">
 
             <!-- Navbar brand -->
-            <a href="../index.html">
-                <img class="navbar-brand pt-0 ml-3" src="../assets/images/website-images/logo.png"
-                    alt="exotic parts logo" width="85em">
-            </a>
+            <a class="navbar-brand" href="index.html">DECENT AUTO PARTS</a>
 
             <!-- Collapse button -->
             <button class="navbar-toggler toggler-example navbar-light" type="button" data-toggle="collapse"
@@ -74,7 +68,8 @@
                                     </g>
                                 </svg>
                             </span>
-                            <span>About Us</span></a>
+                            <span>About Us</span>
+                        </a>
                     </li>
                     <!-- Blog -->
                     <li class="nav-item  pl-4 pl-lg-0 pl-md-4 pl-sm-4">
@@ -91,7 +86,8 @@
                                         d="M28.99,18.48C29,18.76,28.77,19,28.48,19H26.5c-0.28,0-0.5-0.22-0.5-0.5h-0.02C25.74,12.27,20.73,7.26,14.5,7.02V7 C14.22,7,14,6.78,14,6.5V4.52c0-0.29,0.24-0.52,0.52-0.51C22.38,4.28,28.72,10.62,28.99,18.48z" />
                                 </svg>
                             </span>
-                            <span>Blog</span></a>
+                            <span>Blog</span>
+                        </a>
                     </li>
                     <!-- contact us -->
                     <li class="nav-item pl-4 pl-lg-0 pl-md-4 pl-sm-4">
@@ -113,7 +109,8 @@
                                     </g>
                                 </svg>
                             </span>
-                            <span>Contact Us</span></a>
+                            <span>Contact Us</span>
+                        </a>
                         </a>
                     </li>
                 </ul>
@@ -137,7 +134,8 @@
                                         </g>
                                     </g>
                                 </svg></span>
-                            <span id="loggedIn">Login / Sign Up</span></a>
+                            <span id="loggedIn">Login / Sign Up</span>
+                        </a>
                         </a>
                     </li>
                     <li class="nav-item  pl-4 pl-lg-0 pl-md-4 pl-sm-4">
@@ -159,16 +157,13 @@
                 </ul>
             </div>
         </nav>
-        <!-- /first Nav bar -->
-        <!-- second Nav bar  shows all the categories for auto parts-->
+        <!-- first navbar -->
+        <!-- second navbar  shows all the categories for auto parts-->
         <nav class="category-navbar d-none d-lg-inline d-md-inline d-sm-none ">
             <ul
                 class="d-flex justify-content-around align-items-center list-unstyled mx-5 my-3 my-lg-0 my-md-0 my-sm-3 py-2 rounded-pill font-weight-bold">
                 <li class="dropdown">
-                    <!-- brand logo -->
-                    <span>
-                        <img src="../assets/images/website-images/logo-crop.png" alt="" width="50px">
-                        <span class="font-weight-bolder text-white">SHOP BY CATEGORIES:</span></span>
+                    <span class="font-weight-bolder text-white">SHOP BY CATEGORY:</span>
                 </li>
                 <li class="dropdown">
                     <!-- first category -->
@@ -197,7 +192,7 @@
                     </div>
                 </li>
                 <li class=" dropdown ">
-                    <!-- 3rd category -->
+                    <!-- third category -->
                     <a class="dropdown-toggle text-decoration-none text-white" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"> Interior</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -217,7 +212,7 @@
                         <a class="dropdown-item" href="product.html?id=4&c_id=1">Back & Head Lights <span
                                 class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
                         <a class="dropdown-item" href="product.html?id=4&c_id=2">Side Mirrors <span
-                                class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
+                                class="fas fa-chevron-right"></i></span> </a>
                         <a class="dropdown-item" href="product.html?id=4&c_id=3">Wiper Blades <span
                                 class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
                     </div>
@@ -231,10 +226,9 @@
     <section class="container">
         <h1 class="text-center">PRODUCTS</h1>
         <div class="col-sm-12 product-navigation">
-            <!-- the navigation towards category or home from products.js -->
         </div>
         <div class="row products-row products-container">
-            <!-- list of products w.r.t category from products.js -->
+            <!-- list of products according to category from products.js -->
         </div>
     </section>
 
@@ -243,7 +237,7 @@
         <section class="pb-3 footer-section">
             <section class="mt-5 d-flex container justify-content-between align-items-top flex-wrap">
                 <div id="contact-us">
-                    <!-- contact us 1st column -->
+                    <!-- contact us  -->
                     <ul class="container list-unstyled">
                         <li>
                             <h6 class="font-weight-bold">Contact Us</h6>
@@ -264,45 +258,37 @@
                                         </g>
                                     </g>
                                 </svg></span>
-                            <!-- about contains anchor libk direct to the about us sections -->
-                            <a href="../index.html#about-us" class="text-decoration-none"> About</a> </li>
+                            <!-- about us contains an anchor link that directs the user to the about us section -->
+                            <a href="../index.html#about-us" class="text-decoration-none"> About</a>
+                        </li>
                         <!-- address -->
-                        <li><span><i class="fas fa-map-marker-alt"></i></span> Address: <br>Shop#8 Auto Parts
-                            road,
-                            Karachi-75650, Pakistan</li>
+                        <li><span><i class="fas fa-map-marker-alt"></i></span> Address: <br> Dholaikhal, Shop No. 31
+                        </li>
                         <!-- phone number -->
-                        <li><span><i class="fas fa-phone-alt"></i></span> Phone No: <br> +92312345678</li>
-                        <!-- email onclick directs to the given email address -->
+                        <li><span><i class="fas fa-phone-alt"></i></span> Phone No: <br> +8801*********</li>
+                        <!-- email address -->
                         <li><span><i class="fas fa-envelope"></i></span> Email: <address class="mb-0"><a
-                                    href="mailto:exoticparts@gmail.com"
-                                    class="text-decoration-none">exoticparts@gmail.com</a>
+                                    href="mailto:project@gmail.com" class="text-decoration-none">project@gmail.com</a>
                             </address>
                         </li>
                         <!-- facebook -->
-                        <li><span><i class="fab fa-facebook-f"></i></span><a href="https://www.facebook.com/ExoticParts"
-                                class="text-decoration-none">
+                        <li><span>Facebook Page: <br><i class="fab fa-facebook-f"></i></span><a
+                                href="https://www.facebook.com/project" class="text-decoration-none">
                                 Facebook</a>
-                        </li>
-                        <!-- instagram -->
-                        <li><span><i class="fab fa-instagram"></i></span> <a
-                                href="https://www.instagram.com/ExoticParts/" class="text-decoration-none">
-                                Instagram</a></li>
                     </ul>
                 </div>
-                <!-- sort by categories second column -->
+                <!-- Categories column -->
                 <div>
                     <ul class="list-unstyled container">
                         <li>
-                            <h6 class="font-weight-bold">Sort by Categories</h6>
+                            <h6 class="font-weight-bold">Categories</h6>
                         </li>
-                        <!-- all 4 categories direct the user to their respective category page -->
-                        <li><span></span><a href="../index.html#1" class="text-decoration-none">Tyre and Wheels</a></li>
-                        <li><span></span><a href="../index.html#2" class="text-decoration-none">Exterior</a></li>
-                        <li><span></span><a href="../index.html#3" class="text-decoration-none">Interior</a></li>
-                        <li><span></span><a href="../index.html#4" class="text-decoration-none">Car Parts</a></li>
+                        <li><span></span><a href="#1" class="text-decoration-none">Tyres and Wheels</a></li>
+                        <li><span></span><a href="#2" class="text-decoration-none">Exterior</a></li>
+                        <li><span></span><a href="#3" class="text-decoration-none">Interior</a></li>
+                        <li><span></span><a href="#4" class="text-decoration-none">Car Parts</a></li>
                     </ul>
                 </div>
-                <!-- this footer part contains content why user choose exotic parts 3rd column contains (2 ul elements) -->
                 <div>
                     <!-- 1st ul -->
                     <ul class="list-unstyled container">
@@ -322,17 +308,17 @@
                                         </g>
                                     </g>
                                 </svg></span>
-                            <h6 class="d-inline font-weight-bold">Get 10% Discount on late delivery</h6>
+                            <h6 class="d-inline font-weight-bold">Great Discounts!</h6>
                         </li>
                         <li>
-                            <p>Don't let your auto die, buy exotic parts!</p>
+                            <p>Exclusive Products</p>
                         </li>
 
                         <li>
-                            <p>Big range of genuine products</p>
+                            <p>Authentic products</p>
                         </li>
                         <li>
-                            <p>Deliver at door steps</p>
+                            <p>Quick Delivery</p>
                         </li>
 
                     </ul>
@@ -357,7 +343,7 @@
                             <h6 class="d-inline font-weight-bold">Easy Online Shopping</h6>
                         </li>
                         <li>
-                            <p>Get all Your Autoparts</p>
+                            <p>Get all Your auto parts</p>
 
                         </li>
 
@@ -375,7 +361,7 @@
         <!-- copyright section -->
         <div class="w-100 copyright-section">
             <small class="ml-5">
-                &copy; Copyright 2020 Exotic Parts.This website is developed for learning purpose.
+                &copy Copyright 2021
             </small>
         </div>
     </footer>
@@ -385,7 +371,7 @@
     <!-- sweet alert scripting -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <!-- product page js external file -->
+    <!-- product page js external files -->
     <script src="../assets/script/products.js"></script>
 
     <script src="../assets/script/product_details.js"></script>

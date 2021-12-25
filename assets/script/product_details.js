@@ -3,7 +3,7 @@ window.onload = function () {
   document.getElementById('loader').style.display = 'none';
 }
 
-// get the category and sub category id from url
+// get the category and sub category id from the url
 let getUrlParamsProductId = function (url) {
   let params = {};
   (url + "?")
@@ -19,20 +19,18 @@ let getUrlParamsProductId = function (url) {
   return params;
 };
 
-// asynchronous function to get fetch products from JSON
+// asynchronous function to fetch products from JSON
 async function getProductDetails() {
   let products = true;
 
-  // get the id's
+  // get the ids
   let params = getUrlParamsProductId(window.location.href);
   let pid = params.p_id; // product id url
 
   // fetch the data from local json file
-  // ***NOTE: Live Server Extension should be
-  // installed for fetching local JSON.
-  const response = await fetch("../assets/JSON/exotic-parts.json");
+  const response = await fetch("../assets/JSON/decent-parts.json");
 
-  //convert the response in JSON format
+  //convert the response to JSON format
   const categories = await response.json();
 
   categories.forEach((category) => {
@@ -44,12 +42,9 @@ async function getProductDetails() {
       let similar_products = []; //similar products array
 
       product_categories.forEach((product_detail) => {
-
-        // console.log("subcat: " + sub_cat.c_id);
         if (product_detail.p_id == pid) {
           products = sub_cat.products;
-          // console.log(products);
-          // set the products information and product specs into the UI
+          // Display the product information and product specs in the UI
           document.querySelector(".products-container").innerHTML = products
             .map((product) => {
               if (product.p_id == pid) {
@@ -92,15 +87,11 @@ async function getProductDetails() {
                 <p><p><b> <a href="../index.html">Home</a> / <a href="../index.html#${category.id}"> ${category.autoPart}</a> / <a href="product.html?id=${category.id}&c_id=${sub_cat.c_id}"> ${sub_cat.name} </a> / ${product_detail.name} </b></p>
                 <hr></p>
                 <h1>${product.name}</h1>
-                <p>Product Code: ${product.p_id}</p>
-                <p>${product.description}</p>
-                <h4 class="product-price">Rs: ${product.price}</h4>
-                <p><b>Company:</b> Exotic Parts</p>
-                <p><b>Warranty:</b> 30 Days</p>
+                <h4 class="product-price">Tk: ${product.price}</h4>
                 <p><b>Availability:</b> <span class="badge badge-pill badge-primary">${product.stock_amount}</span></p>
 
                 <div>
-                    <label>Quantity:</label>
+                    <label style="color:white">Quantity:</label>
                     <button class="sub-product">-</button>
                     <input type="text" name="quantity" value="1" class="cart-edit product-quantity" disabled>
                     <button class="add-product">+</button>
@@ -126,15 +117,15 @@ async function getProductDetails() {
     </div> `;
               }
               else {
-                similar_products.push(product); //add other products into 
+                similar_products.push(product);
 
-                // set first 3 similar products in the product details page
+                // Display the first 3 similar products in the product details page
                 document.querySelector(".similar-products").innerHTML = similar_products.map((similarProduct, index) => {
                   if (index < 3) {
                     return `<div class="col-md-4 text-center">
                               <a href="product_detail.html?p_id=${similarProduct.p_id}"><img src="${similarProduct.url1}" height="300" ></a>
                               <a href="product_detail.html?p_id=${similarProduct.p_id}"><h6 class="mt-2 similar-product-heading">${similarProduct.name}</h6></a>
-                              <span class="badge badge-pill badge-danger text-white py-2 px-3">${similarProduct.price} RS.</span>
+                              <span class="badge badge-pill badge-danger text-white py-2 px-3">${similarProduct.price} TK.</span>
                           </div>`;
                   }
                 }).join("");
@@ -142,25 +133,22 @@ async function getProductDetails() {
             })
             .join("");
 
-          // adding add to cart functionality using the product data
           function addToCart() {
             let quantity = 1;
-            let totalPrice = product_detail.price; //set initial price w.r.t 1 product quantity
-
-            // get elements
+            let totalPrice = product_detail.price;
             let subtractProduct = document.querySelector(".sub-product");
             let addProduct = document.querySelector(".add-product");
             let productQuantity = document.querySelector(".product-quantity");
             let addToCart = document.querySelector(".add-to-cart");
 
-            // add totalprice and quantity
+            // add to the totalprice and quantity
             addProduct.onclick = function () {
               totalPrice += product_detail.price;
               quantity++;
               productQuantity.value = quantity;
             };
 
-            // subtract totalprice and quantity
+            // subtract from the totalprice and quantity
             subtractProduct.onclick = function () {
               if (quantity > 1) {
                 totalPrice -= product_detail.price;
@@ -168,7 +156,7 @@ async function getProductDetails() {
                 productQuantity.value = quantity;
               }
             };
-            // Save the total price and quantiy from all the products
+            // Save the total price and quantiy of all the products
             addToCart.onclick = function () {
 
               let cartItems = []; // array of selected products by user
@@ -186,9 +174,8 @@ async function getProductDetails() {
               };
 
               /*
-                check if, products are already added in cart then 
-                keep them into cart, and then add new products
-                after the previous ones.
+                check if, products are already added in the cart.
+                If so, then keep them in the cart, and add new products.
               */
               if (localStorage.getItem("products") !== null) {
 
@@ -196,8 +183,8 @@ async function getProductDetails() {
                 previousProducts.forEach(preProduct => {
 
                   /*
-                    if selected product have aleady been addedd 
-                    that should be override with the new one.
+                    if selected product is aleady added, 
+                    it should be overriden with the new one.
                   */
                   if (preProduct.product_id !== productJson.product_id) {
                     cartItems.push(preProduct);
@@ -205,18 +192,18 @@ async function getProductDetails() {
                 });
               }
 
-              // adding new selected products
+              // adding new products
               cartItems.push(productJson);
 
               // storing purchased product detail in local storage with totalprice and quantity
               localStorage.setItem("products", JSON.stringify(cartItems));
 
-              // update the quantity values on cart icon
+              // update the value of quantity on cart icon
               showQuantity();
             };
           }
 
-          // function call - add products into localStorage
+          // function call to add products to localStorage
           addToCart();
 
         }
@@ -227,9 +214,7 @@ async function getProductDetails() {
 
 }
 
-/*
- * function for setting the product quantity on cart icon
- */
+// Function to display the product quantity on the cart icon
 function showQuantity() {
   let userCart = document.getElementById("user-cart");
 
@@ -239,7 +224,7 @@ function showQuantity() {
   let cartCurrentProducts = JSON.parse(localStorage.getItem("products"));
 
   if (cartCurrentProducts !== null) {
-    // loop through adding all products quantity
+    // Increment the product quantity
     cartCurrentProducts.forEach(cartCurrentProduct => {
       totalQuantity += cartCurrentProduct.product_quantity;
     });
@@ -254,21 +239,20 @@ function showQuantity() {
     }
   };
 
-  // setting the total quantity on UI - cart icon
+  // Display the total product quantity on the cart icon
   document.querySelector(".total-quantity").innerHTML = `<span>${totalQuantity}</span>`;
 
 }
 
-// function to check if user is login or not
+// function to check if user is logged in or not
 function loginStatus() {
 
-  // get login/signin anchor tag 
   const login = document.getElementById("loggedIn");
 
-  // get loggedin user from local storage
+  // get loggedin users from local storage
   const user = JSON.parse(localStorage.getItem("loggedInUser"));
 
-  //if user is login then change the text into logout
+  //if user is logged in then change the text into logout, otherwise show login/signup
   if (user !== null) {
     login.innerHTML = "Logout";
   }
@@ -277,16 +261,14 @@ function loginStatus() {
   }
 
   /* 
-   * logout the user from website when logout button is clicked
-   * otherwise redirect the user to login/signup form
-   */
+  * Log the user out from website when logout button is clicked.
+  * Otherwise redirect the user to login/signup form
+  */
   document.querySelector(".login-btn").onclick = function () {
-
-    // if user already login
     if (login.innerHTML == "Logout") {
       localStorage.removeItem("loggedInUser");
 
-      // show sweet alert message to user about logout
+      // show alert message to user when logging out
       swal("Logging Out...", "Your account will be logged out!", "success");
       loginStatus(); //reflect the ui after logout
     }
@@ -299,8 +281,8 @@ function loginStatus() {
 // check login / logout status
 loginStatus();
 
-//function calling - get products
+//function call to get products
 getProductDetails();
 
-// set the quantity values on cart icon
+// Show the product quantity on cart icon
 showQuantity();

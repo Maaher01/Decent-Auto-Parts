@@ -5,30 +5,26 @@
     <!--  Meta  -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Detail</title>
+    <title>Decent Auto Parts</title>
 
-    <!--bootsrap style sheet  -->
+    <!--bootsrap styles sheet-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <!-- style sheet for complete website -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- font family Montserrat and roboto slab -->
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Roboto+Slab:wght@200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-
     <!-- font awesome icon link -->
     <script src="https://kit.fontawesome.com/ca30ddfff9.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="loader">
-        <img id="loader-image" src="../assets/images/website-images/Spinner-1s-200px.gif" alt="Loading.." />
-    </div>
     <header class="header">
-        <!-- first navbar contains about, contact us, login and add to cart -->
+        <!-- first navbar with about, contact us ,login and add to cart -->
         <nav class="navbar navbar-expand-lg fixed-top p-0 font-weight-bold mb-4">
 
             <!-- Navbar brand -->
@@ -46,11 +42,11 @@
                 <ul class="navbar-nav mr-auto sm-ml-1">
                     <!-- about us -->
                     <li class="nav-item  pl-4 pl-lg-0 pl-md-4 pl-sm-4">
-                        <a class="nav-link d-flex flex-lg-column align-items-center" href="../index.html#about-us">
+                        <a class="nav-link d-flex flex-lg-column align-items-center" href="#about-us">
                             <!-- About Us icon -->
                             <span class="pr-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35"
-                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    viewBox="0 0 172 172" style=" fill:#ad3a3a;">
                                     <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1.2"
                                         stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
                                         stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
@@ -69,7 +65,7 @@
                     </li>
                     <!-- Blog -->
                     <li class="nav-item  pl-4 pl-lg-0 pl-md-4 pl-sm-4">
-                        <a class="nav-link d-flex flex-lg-column align-items-center" href="blog.html">
+                        <a class="nav-link d-flex flex-lg-column align-items-center" href="./html/blog.html">
                             <!-- Blog icon -->
                             <span class="pr-1">
                                 <svg fill="#08415c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" x="0px"
@@ -115,7 +111,7 @@
                     <li class="nav-item pl-4 pl-lg-0 pl-md-4 pl-sm-4">
                         <a class="nav-link d-flex flex-lg-column align-items-center login-btn">
                             <!-- login icon  -->
-                            <span class="pr-1">
+                            <span class="pr-1 ">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="36" height="36"
                                     viewBox="0 0 172 172" style=" fill:#000000;">
                                     <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
@@ -136,10 +132,11 @@
                     </li>
                     <li class="nav-item  pl-4 pl-lg-0 pl-md-4 pl-sm-4">
                         <!-- Add to cart -->
-                        <a class="nav-link d-flex flex-lg-column align-items-center d-none" id="user-cart">
+                        <a class="nav-link d-flex flex-lg-column align-items-center" id="user-cart">
                             <!--Add to Cart icon-->
                             <span class="pr-4">
-                                <span class="total-quantity ">0</span>
+                                <span class="total-quantity">0</span>
+
                                 <svg width="3.2em" height="3em" viewBox="0 0 16 16" class="bi bi-cart4"
                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
@@ -153,7 +150,7 @@
             </div>
         </nav>
         <!-- first navbar -->
-        <!-- second navbar  shows all the categories for auto parts-->
+        <!-- second navbar shows all the categories for auto parts-->
         <nav class="category-navbar d-none d-lg-inline d-md-inline d-sm-none ">
             <ul
                 class="d-flex justify-content-around align-items-center list-unstyled mx-5 my-3 my-lg-0 my-md-0 my-sm-3 py-2 rounded-pill font-weight-bold">
@@ -162,15 +159,15 @@
                 </li>
                 <li class="dropdown">
                     <!-- first category -->
-                    <a class=" dropdown-toggle text-decoration-none  text-white " id="dropdownMenuButton"
+                    <a class="dropdown-toggle  text-decoration-none text-white" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Tyre and Wheels</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="product.html?id=1&c_id=1">Wheel Accessories <span
+                        <a class="dropdown-item" href="html/product.html?id=1&c_id=1">Wheel Accessories <span
                                 class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
-                        <a class="dropdown-item" href="product.html?id=1&c_id=2">Nuts <span class="category-arrow"><i
-                                    class="fas fa-chevron-right"></i></span> </a>
-                        <a class="dropdown-item" href="product.html?id=1&c_id=3">Tyres <span class="category-arrow"><i
-                                    class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="html/product.html?id=1&c_id=2">Nuts <span
+                                class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="html/product.html?id=1&c_id=3">Tyres <span
+                                class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
                     </div>
                 </li>
                 <li class=" dropdown ">
@@ -178,25 +175,25 @@
                     <a class="dropdown-toggle text-decoration-none text-white" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Exterior</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="product.html?id=2&c_id=1">Window Visors <span
+                        <a class="dropdown-item" href="html/product.html?id=2&c_id=1">Window Visors <span
                                 class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
-                        <a class="dropdown-item" href="product.html?id=2&c_id=2">Door Handles, Locks & Accessories <span
-                                class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
-                        <a class="dropdown-item" href="product.html?id=2&c_id=3">Truck Accessories <span
+                        <a class="dropdown-item" href="html/product.html?id=2&c_id=2">Door Handles, Locks & Accessories
+                            <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="html/product.html?id=2&c_id=3">Truck Accessories <span
                                 class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
                     </div>
                 </li>
                 <li class=" dropdown ">
-                    <!-- third category -->
+                    <!-- 3rd category -->
                     <a class="dropdown-toggle text-decoration-none text-white" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"> Interior</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="product.html?id=3&c_id=1">Mobile Electronics <span
+                        <a class="dropdown-item" href="html/product.html?id=3&c_id=1">Mobile Electronics <span
                                 class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
-                        <a class="dropdown-item" href="product.html?id=3&c_id=2">Horns and Components <span
+                        <a class="dropdown-item" href="html/product.html?id=3&c_id=2">Horns and Components <span
                                 class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
-                        <a class="dropdown-item" href="product.html?id=3&c_id=3">Switches, Relays and Wiring Components
-                            <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
+                        <a class="dropdown-item" href="html/product.html?id=3&c_id=3">Switches, Relays and Wiring
+                            Components <span class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
                     </div>
                 </li>
                 <li class=" dropdown ">
@@ -204,70 +201,248 @@
                     <a class="dropdown-toggle text-decoration-none text-white" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Car Parts</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="product.html?id=4&c_id=1">Back & Head Lights <span
+                        <a class="dropdown-item" href="html/product.html?id=4&c_id=1">Back & Head Lights <span
                                 class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
-                        <a class="dropdown-item" href="product.html?id=4&c_id=2">Side Mirrors <span
+                        <a class="dropdown-item" href="html/product.html?id=4&c_id=2">Side Mirrors <span
                                 class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
-                        <a class="dropdown-item" href="product.html?id=4&c_id=3">Wiper Blades <span
+                        <a class="dropdown-item" href="html/product.html?id=4&c_id=3">Wiper Blades <span
                                 class="category-arrow"><i class="fas fa-chevron-right"></i></span> </a>
                     </div>
                 </li>
             </ul>
         </nav>
     </header>
+    <!-- slider  -->
+    <main class="mb-5">
+        <section class="slider position-relative d-flex justify-content-end align-items-center py-5 mt-4">
+            <!-- section created to give a colored background to the slider section -->
+            <section class="position-absolute corousel-bg"></section>
 
-    <!-- Product Detail-->
-    <div class="products-container">
-        <!-- Complete product detail w.r.t category from products-details.js -->
-        <!-- Product Specification -->
+            <div id="carouselExampleSlidesOnly" class="carousel slide w-50" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-interval="2500">
+                        <img src="assets/images/website-images/slider-1.webp" class="d-block w-75 mx-auto" alt="...">
+                        <h3 class="w-75 mx-auto">High Quality Products</h3>
+                    </div>
+                    <div class="carousel-item" data-interval="2500">
+                        <img src="assets/images/website-images/slider-2.webp" class="d-block w-75 mx-auto" alt="...">
+                        <h3 class="w-75 mx-auto"><span>Premium Products</h3>
+                    </div>
+                    <div class="carousel-item" data-interval="2500">
+                        <img src="assets/images/website-images/slider-3.webp" class="d-block w-75 mx-auto" alt="...">
+                        <h3 class="w-75 mx-auto">Cheaper Rate</h3>
 
-
-    </div>
-    <!-- Similar Products -->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <h3 class="title">Similar Products</h3>
-                <hr>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="row similar-products">
-
-            <div class="col-3 text-center">
-                <img src="../assets/images/website-images/side-mirrors.png">
-                <h4>Door Accessories</h4>
-                <span class="badge badge-pill badge-danger">$50.00</span>
+            <div>
+                <h1 class="usp ml-lg-5 ml-md-4 text-center position-absolute w-50 text-uppercase">An Auto Parts Buying
+                    E-Commerce Website</h1>
             </div>
+        </section>
+        <!--Slider  -->
+        <!-- About Decent Auto Parts -->
+        <section class="about w-75 mx-auto my-5" id="about-us">
+            <h1 class="text-uppercase">About Us</h1>
+            <div class="d-flex justify-content-around align-items-center ">
+                <p class="w-100 w-sm-100 w-md-75 w-lg-50 mr-lg-5 mr-md-5 text-justify">
+                    At Decent Auto Parts we offer an extensive selection of auto parts, truck parts and automotive
+                    accessories, so you can easily find the quality parts you need at the lowest price. Explore our wide
+                    inventory to find both brand new car parts and
+                    second-hand
+                    parts for your vehicle. We are one of the largest distributors of auto parts online in Bangladesh.
+                    Our customers have come to know us as the best place to
+                    buy auto parts online.
 
-            <div class="col-3 text-center">
-                <img src="../assets/images/website-images/side-mirrors.png">
-                <h4>Door Accessories</h4>
-                <span class="badge badge-pill badge-danger">$58.00</span>
+                </p>
+                <span class="d-none d-sm-none d-md-flex d-lg-flex"> <img src="assets/images/website-images/about.png"
+                        alt="wheel image" width="300em"></span>
             </div>
+        </section>
+        <!-- Categories Section-->
+        <section class="category-sec mx-auto pt-5" id="shop-by-category">
+            <h1 class="text-center text-uppercase">Categories</h1>
+            <section class="all-category mb-5">
+                <!-- category 1-->
+                <div class="pt-2 pb-5 px-5" id="1">
+                    <div class="lg-w-75  mx-auto">
+                        <h2 class="mt-4 font-weight-bold">Wheels</h2>
+                        <div class="d-flex justify-content-around flex-wrap align-items-center">
+                            <!-- 1st Sub Category -->
+                            <div class="card my-3 my-lg-0 my-md-0 my-sm-3" style="width: 18rem;">
+                                <img src="assets/images/website-images/wheel-accessories.jpg"
+                                    class="  card-img-top w-50 mx-auto img-fluid pt-2 pb-1" alt="wheel accessories"
+                                    id="zoom-img">
+                                <div class="card-body">
+                                    <h6 class="card-title">Wheel Accessories</h6>
+                                    <p class="card-text">Variety of Wheel Accessories</p>
+                                    <a href="html/product.html?id=1&c_id=1" class="btn">View <span class="ml-3"><i
+                                                class="fas fa-chevron-right"></i></span></a>
+                                </div>
+                            </div>
+                            <!-- 2nd Sub Category -->
+                            <div class="card my-3 my-lg-0 my-md-0 my-sm-3" style="width: 18rem;">
+                                <img src="assets/images/website-images/nuts.png"
+                                    class="card-img-top w-50 mx-auto pt-4 img-fluid" alt="nuts" id="zoom-img">
+                                <div class="card-body">
+                                    <h6 class="card-title">Nuts</h6>
+                                    <p class="card-text"> Variety of Nuts</p>
+                                    <a href="html/product.html?id=1&c_id=2" class="btn">View <span class="ml-3"><i
+                                                class="fas fa-chevron-right"></i></span></a>
+                                </div>
+                            </div>
+                            <!-- 3rd Sub Category -->
+                            <div class="card my-3 my-lg-0 my-md-0 my-sm-3 overflow-hidden" style="width: 18rem;">
+                                <img src="assets/images/website-images/tyre.png"
+                                    class="card-img-top w-50 mx-auto img-fluid" alt="tyre" id="zoom-img">
+                                <div class="card-body">
+                                    <h6 class="card-title">Tyres</h6>
+                                    <p class="card-text pb-2">Variety of Tyre Accessories
+                                    </p>
+                                    <a href="html/product.html?id=1&c_id=3" class="btn">View <span class="ml-3"><i
+                                                class="fas fa-chevron-right"></i></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- category 2-->
+                <div class="pt-2 pb-5 px-5" id="2">
+                    <div class="lg-w-75  mx-auto">
+                        <h2 class="mt-4 font-weight-bold">External Parts</h2>
+                        <div class="d-flex justify-content-around flex-wrap align-items-center">
+                            <!-- 1st Sub Category -->
+                            <div class="card my-3 my-lg-0 my-md-0 my-sm-3 pt-3" style="width: 18rem;">
+                                <img src="assets/images/website-images/window-visors.png"
+                                    class="card-img-top w-75 mx-auto" alt="window visor" id="zoom-img">
+                                <div class="card-body">
+                                    <h6 class="card-title">Window Visors</h6>
+                                    <p class="card-text">Variety of Window Visor Accessories.</p>
+                                    <a href="html/product.html?id=2&c_id=1" class="btn">View <span class="ml-3"><i
+                                                class="fas fa-chevron-right"></i></span></a>
+                                </div>
+                            </div>
+                            <!-- 2nd Sub Category -->
+                            <div class="card my-3 my-lg-0 my-md-0 my-sm-3 pt-5" style="width: 18.3rem;">
+                                <img src="assets/images/website-images/door-accessories.png"
+                                    class="card-img-top w-50 mx-auto" alt="door accessories" id="zoom-img">
+                                <div class="card-body">
+                                    <h6 class="card-title">Door Handles, Locks & Accessories</h6>
+                                    <p class="card-text">Various Door Handles, Locks & Accessories
+                                    </p>
+                                    <a href="html/product.html?id=2&c_id=2" class="btn">View <span class="ml-3"><i
+                                                class="fas fa-chevron-right"></i></span></a>
+                                </div>
+                            </div>
+                            <!-- 3rd Sub Category -->
+                            <div class="card my-3 my-lg-0 my-md-0 my-sm-3 pt-5" style="width: 17.5rem;">
+                                <img src="assets/images/website-images/truck-accessories.png"
+                                    class="card-img-top w-50 mx-auto pt-2" alt="truck-accessories" id="zoom-img">
+                                <div class="card-body">
+                                    <h6 class="card-title">Truck Accessories</h6>
+                                    <p class="card-text">Variety of Truck Accessories</p>
+                                    <a href="html/product.html?id=2&c_id=3" class="btn">View <span class="ml-3"><i
+                                                class="fas fa-chevron-right"></i></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- category 3-->
+                <div class="pt-2 pb-5 px-5" id="3">
+                    <div class="lg-w-75  mx-auto">
+                        <h2 class="mt-4 font-weight-bold">Internal Parts</h2>
+                        <div class="d-flex justify-content-around flex-wrap align-items-center">
+                            <!-- 1st Sub Category -->
+                            <div class="card my-3 my-lg-0 my-md-0 my-sm-3 pt-4" style="width: 18rem;">
+                                <img src="assets/images/website-images/mobile-electronics.png"
+                                    class="card-img-top w-75 mx-auto" alt="mobile electronics" id="zoom-img">
+                                <div class="card-body">
+                                    <h6 class="card-title">Mobile Electronics</h6>
+                                    <p class="card-text">Variety of Mobile Electronics Accessories
+                                    </p>
+                                    <a href="html/product.html?id=3&c_id=1" class="btn">View <span class="ml-3"><i
+                                                class="fas fa-chevron-right"></i></span></a>
+                                </div>
+                            </div>
+                            <!-- 2nd Sub Category -->
+                            <div class="card my-3 my-lg-0 my-md-0 my-sm-3 pt-1 overflow-hidden" style="width: 18rem;">
+                                <img src="assets/images/website-images/car-horn.png" class="card-img-top w-75 mx-auto"
+                                    alt="car horn" id="zoom-img">
+                                <div class="card-body">
+                                    <h6 class="card-title">Horns and Components</h6>
+                                    <p class="card-text">Variety of Horns and Components</p>
+                                    <a href="html/product.html?id=3&c_id=2" class="btn">View <span class="ml-3"><i
+                                                class="fas fa-chevron-right"></i></span></a>
+                                </div>
+                            </div>
+                            <!-- 3rd Sub Category -->
+                            <div class="card my-3 my-lg-0 my-md-0 my-sm-3 pt-4 pb-1" style="width: 18rem;">
+                                <img src="assets/images/website-images/car-relay.png" class="card-img-top w-50 mx-auto"
+                                    alt="car relay switch" id="zoom-img">
+                                <div class="card-body">
+                                    <h6 class="card-title">Switches, Relays, Wiring Components </h6>
+                                    <p class="card-text">Variety of Switches, Relays, Wiring Components</p>
+                                    <a href="html/product.html?id=3&c_id=3" class="btn">View <span class="ml-3"><i
+                                                class="fas fa-chevron-right"></i></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--category 4-->
+                <div class="pt-2 pb-5 px-5 " id="4">
+                    <div class="lg-w-75  mx-auto">
+                        <h2 class="mt-4 font-weight-bold">Car Parts</h2>
+                        <div class="d-flex justify-content-around flex-wrap align-items-center">
+                            <!-- 1st Sub Category -->
+                            <div class="card my-3 my-lg-0 my-md-0 my-sm-3 overflow-hidden" style="width: 18rem;">
+                                <img src="assets/images/website-images/car-headlight.png"
+                                    class="card-img-top w-75 mx-auto" alt="car headlight" id="zoom-img">
+                                <div class="card-body">
+                                    <h6 class="card-title">Back & Head Lights</h6>
+                                    <p class="card-text">Variety of Back & Head Lights Accessories</p>
+                                    <a href="html/product.html?id=4&c_id=1" class="btn">View <span class="ml-3"><i
+                                                class="fas fa-chevron-right"></i></span></a>
+                                </div>
+                            </div>
+                            <!-- 2nd Sub Category -->
+                            <div class="card my-3 my-lg-0 my-md-0 my-sm-3 overflow-hidden" style="width: 18rem;">
+                                <img src="assets/images/website-images/side-mirrors.png" class="card-img-top w-75"
+                                    alt="side mirror" id="zoom-img">
+                                <div class="card-body">
+                                    <h6 class="card-title">Side Mirrors</h6>
+                                    <p class="card-text">Variety of Side Mirror Accessories</p>
+                                    <a href="html/product.html?id=4&c_id=2" class="btn">View <span class="ml-3"><i
+                                                class="fas fa-chevron-right"></i></span></a>
+                                </div>
+                            </div>
+                            <!-- 3rd Sub Category -->
+                            <div class="card my-3 my-lg-0 my-md-0 my-sm-3 pt-2 overflow-hidden" style="width: 18rem;">
+                                <img src="assets/images/website-images/wiper-blades.png" class="card-img-top mx-auto"
+                                    alt="wiper blades" id="zoom-img">
+                                <div class="card-body">
+                                    <h6 class="card-title">Wiper Blades</h6>
+                                    <p class="card-text">Variety of different Wiper Blades Accessories
+                                    </p>
+                                    <a href="html/product.html?id=4&c_id=3" class="btn mt-1">View <span class="ml-3"><i
+                                                class="fas fa-chevron-right"></i></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            <div class="col-3 text-center">
-                <img src="../assets/images/website-images/side-mirrors.png">
-                <h4>Door Accessories</h4>
-                <span class="badge badge-pill badge-danger">$82.00</span>
-            </div>
+        </section>
 
-            <div class="col-3 text-center">
-                <img src="../assets/images/website-images/side-mirrors.png">
-                <h4>Door Accessories</h4>
-                <span class="badge badge-pill badge-danger">$74.00</span>
-            </div> -->
-
-        </div>
-    </div>
-
-
+    </main>
     <!-- footer columns-->
     <footer>
         <section class="pb-3 footer-section">
-            <section class="mt-5 d-flex container justify-content-between align-items-top flex-wrap">
+            <section class="mt-0 d-flex container justify-content-between align-items-top flex-wrap">
                 <div id="contact-us">
-                    <!-- contact us 1st column -->
+                    <!-- 1st column -->
                     <ul class="container list-unstyled">
                         <li>
                             <h6 class="font-weight-bold">Contact Us</h6>
@@ -289,7 +464,7 @@
                                     </g>
                                 </svg></span>
                             <!-- about us contains an anchor link that directs the user to the about us section -->
-                            <a href="../index.html#about-us" class="text-decoration-none"> About</a>
+                            <a href="#about-us" class="text-decoration-none"> About</a>
                         </li>
                         <!-- address -->
                         <li><span><i class="fas fa-map-marker-alt"></i></span> Address: <br> Dholaikhal, Shop No. 31
@@ -314,9 +489,9 @@
                             <h6 class="font-weight-bold">Categories</h6>
                         </li>
                         <li><span></span><a href="#1" class="text-decoration-none">Tyres and Wheels</a></li>
-                        <li><span></span><a href="#2" class="text-decoration-none">Exterior</a></li>
+                        <li><span></span><a href="#2" class="text-decoration-none">External Parts</a></li>
                         <li><span></span><a href="#3" class="text-decoration-none">Interior</a></li>
-                        <li><span></span><a href="#4" class="text-decoration-none">Car Parts</a></li>
+                        <li><span></span><a href="#4" class="text-decoration-none">Accessories</a></li>
                     </ul>
                 </div>
                 <div>
@@ -352,7 +527,7 @@
                         </li>
 
                     </ul>
-                    <!-- second ul -->
+                    <!-- 2nd ul -->
                     <ul class="list-unstyled container">
                         <li>
                             <!-- icon -->
@@ -396,13 +571,14 @@
         </div>
     </footer>
 
+
     <!-- scripting files -->
 
     <!-- sweet alert scripting -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <!-- external product details files -->
-    <script src="../assets/script/product_details.js"></script>
+    <!-- external index js files -->
+    <script src="assets/script/index.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

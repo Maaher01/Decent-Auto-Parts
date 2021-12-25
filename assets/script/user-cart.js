@@ -3,9 +3,7 @@ window.onload = function () {
   document.getElementById('loader').style.display = 'none';
 }
 
-/***
- set products in user cart page from localStorage
-***/
+// Show products in user cart page from localStorage
 function showCartProducts() {
 
   let cartProducts = []; //adding all localSctorage products into array
@@ -14,16 +12,15 @@ function showCartProducts() {
 
   cartProducts = JSON.parse(localStorage.getItem("products"));
 
-  /* sort cart items, so order 
-     should always be same, when 
-     edit / delete the items from cart
+  /* sort cart items, so that the order of the products
+     are always the same, even when items are
+     editted / deleted from the cart
   */
   if (cartProducts !== null && cartProducts.length > 0) {
     cartProducts.sort((a, b) => {
       return a.product_id - b.product_id;
     });
 
-    // set the table head when no products are in cart
     document.querySelector(".user-cart-head").innerHTML =
       `<tr>
          <th scope="col" class="border-0">
@@ -40,8 +37,8 @@ function showCartProducts() {
     // set the array values in user cart table
     document.querySelector(".user-cart-table").innerHTML = cartProducts.map(product => {
 
-      totalBill += product.total_price; //add - all cart products prices
-      totalQuantity += product.product_quantity; //sum of all products quantity
+      totalBill += product.total_price; //add the prices of all the products in the cart
+      totalQuantity += product.product_quantity; //Total number of products
       return `<tr>
                    <th scope="row" class="border-0">
                         <div class="p-2">
@@ -52,11 +49,11 @@ function showCartProducts() {
                                 class="text-dark d-inline-block align-middle">${product.product_name}
                                 </a></h5><span class="text-muted font-weight-normal font-italic d-block">
                                 Category: ${product.category_name}</span>
-                                <div class="price-sm"><strong>RS. ${product.product_price} x ${product.product_quantity}</strong></div>
+                                <div class="price-sm"><strong>TK. ${product.product_price} x ${product.product_quantity}</strong></div>
                             </div>
                         </div>
                     </th>
-                    <td class="border-0 align-middle price"><strong>RS. ${product.product_price} x ${product.product_quantity}</strong></td>
+                    <td class="border-0 align-middle price"><strong>TK. ${product.product_price} x ${product.product_quantity}</strong></td>
                     <td class="border-0 align-middle">
                         <div class="d-flex flex-lg-row">
                             <input type="button" class="sub-product edit-product" id="sub-${product.product_id}" value="-">
@@ -67,31 +64,29 @@ function showCartProducts() {
                 </tr>`;
     }).join('');
 
-    //*** set the sub-total and total bill in order summary ***
-    document.querySelector(".sub-total-bill").innerHTML = totalBill + " RS.";
-    document.querySelector(".total-bill").innerHTML = totalBill + " RS.";
+    //Show the sub-total and total bill in order summary
+    document.querySelector(".sub-total-bill").innerHTML = totalBill + " TK.";
+    document.querySelector(".total-bill").innerHTML = totalBill + " TK.";
 
-    //*** set the sub-total and total bill in checkout popup ***
+    //Show the sub-total and total bill in checkout popup
     document.querySelector(".checkout-quantity").innerHTML = totalQuantity;
-    document.querySelector(".checkout-total-bill").innerHTML = totalBill + " RS.";
+    document.querySelector(".checkout-total-bill").innerHTML = totalBill + " TK.";
     let discountBill = totalBill - ((totalBill * 10) / 100);    // calculating discount
-    document.querySelector(".checkout-discount-bill").innerHTML = discountBill + " RS.";
+    document.querySelector(".checkout-discount-bill").innerHTML = discountBill + " TK.";
 
     /********************* edit cart functionality ********************/
-
-    // get all button of table
     let editProducts = document.querySelectorAll(".edit-product");
 
     for (let i = 0; i < editProducts.length; i++) {
-      //for identify the event listner and call updateCart function
+      //To identify the event listner and call updateCart function
       editProducts[i].addEventListener('click', updateCart, false);
     }
   }
   else {
-    // remove the order summary and personal data form wen no item at cart
+    // remove the order summary and personal data when there is no item in the cart
     document.querySelector(".order-details").style.display = "none";
 
-    // show cart empty msg with return o back option
+    // show cart empty message with return option
     document.querySelector(".user-cart-table").innerHTML =
       `<div class="col-lg-12 d-flex justify-content-center">
           <div>
@@ -103,13 +98,13 @@ function showCartProducts() {
        </div>`;
   }
 
-  // setting the total quantity on UI - cart icon
+  // Displaying the total quantity on the cart icon
   document.querySelector(".total-quantity").innerHTML = `<span>${totalQuantity}</span>`;
 }
 
 /**
  * updating the quantity and price of product
- * and updating it on localStorage
+ * and also updating it in the localStorage
 **/
 function updateCart() {
 
@@ -122,34 +117,32 @@ function updateCart() {
 
   cartCurrentProducts.forEach((product, index) => {
 
-    //selecting the clicked product quantity input from the cart list
     productQuantity = document.querySelector(`#quantity-${id}`);
     let quantity = parseInt(productQuantity.value);
 
     if (product.product_id == id) {
 
-      if (buttonType === "add") { //check button is for adding products
+      if (buttonType === "add") { //button to add products
         quantity++;
         productQuantity.value = quantity;
       }
-      else if (buttonType === "sub") { //check button is for subtracting products
-        if (quantity > 1) { //subbract if products are >1
+      else if (buttonType === "sub") { //button to subtract products
+        if (quantity > 1) {
           quantity--;
           productQuantity.value = quantity;
         }
-        else { //else remove the product from cart and localStorage
+        else {
           quantity--;
 
-          // delete the object from current cart items when 0 quantity
+          // delete the object from cart items when quantity is 0
           cartCurrentProducts.splice(index, 1);
 
-          // set the updated products in local Stprage
+          // store the updated products in local Storage
           localStorage.setItem('products', JSON.stringify(cartCurrentProducts));
 
           // reflect the cart product changes in cart page
           showCartProducts();
 
-          // enforce to remove the header of cart products table, when no items in cart
           if (cartCurrentProducts.length == 0) {
             document.querySelector(".user-cart-head").style.display = "none";
           }
@@ -180,16 +173,11 @@ function updateCart() {
 
         previousProducts.forEach(preProduct => {
 
-          /*
-            add the items which are not
-            edited in cart
-          */
           if (preProduct.product_id !== productJson.product_id) {
             cartItems.push(preProduct);
           }
         });
 
-        // add the edited cart item
         cartItems.push(productJson);
 
         // storing product detail in local storage with totalprice and quantity
@@ -204,15 +192,15 @@ function updateCart() {
 
 /******************* Checkout Functioanlity ******************/
 
-// place order Done button 
+// place order button 
 let clearLS = document.getElementById("done-btn");
 
-// Delivery Time - usp fields
+// Delivery Time- usp fields
 let checkoutbtn = document.getElementById("checkoutbtn");
 let checkouttime = document.getElementById("checkout-time");
 let deliverytime = document.getElementById("delivery-time");
 
-// removing products from localstorage when confirm order
+// removing products from localstorage when order is confirmed
 clearLS.addEventListener('click', function () {
 
   /* get all personal info fields 
@@ -236,7 +224,7 @@ clearLS.addEventListener('click', function () {
   }
 });
 
-// show model with order details and usp 
+// show modal with order details and usp 
 checkoutbtn.addEventListener('click', () => {
 
   /* get all personal info fields 
@@ -254,7 +242,7 @@ checkoutbtn.addEventListener('click', () => {
     }
   }
 
-  // confirm order place msg, if all fields are filled
+  // confirm message, if all fields are filled
   if (isPersonalInfoFilled) {
     document.querySelector(".cart-modal-title").innerHTML = "Your order is about to be place!";
   }
@@ -278,16 +266,15 @@ checkoutbtn.addEventListener('click', () => {
   deliverytime.innerText = tomorrowDate + ' ' + currentTime;
 });
 
-// function to check if user is login or not
+// function to check if user is logged in or not
 function loginStatus() {
 
-  // get login/signin anchor tag 
   const login = document.getElementById("loggedIn");
 
-  // get loggedin user from local storage
+  // get loggedin users from local storage
   const user = JSON.parse(localStorage.getItem("loggedInUser"));
 
-  //if user is login then change the text into logout
+  //if user is logged in then change the text into logout, otherwise show login/signup
   if (user !== null) {
     login.innerHTML = "Logout";
   }
@@ -296,9 +283,9 @@ function loginStatus() {
   }
 
   /* 
-   * logout the user from website when logout button is clicked
-   * otherwise redirect the user to login/signup form
-   */
+  * Log the user out from website when logout button is clicked.
+  * Otherwise redirect the user to login/signup form
+  */
   document.querySelector(".login-btn").onclick = function () {
 
     // if user already login
@@ -320,9 +307,7 @@ function loginStatus() {
 (function () {
   'use strict';
   window.addEventListener('load', function () {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
     var validation = Array.prototype.filter.call(forms, function (form) {
       checkoutbtn.addEventListener('click', function (event) {
         if (form.checkValidity() === false) {
@@ -338,8 +323,8 @@ function loginStatus() {
 
 /******************** Functions Call *******************/
 
-// check login / logout status
+// check login/logout status
 loginStatus();
 
-// function call to set products on user cart page
+// Show the product quantity on cart icon
 showCartProducts();

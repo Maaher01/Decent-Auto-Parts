@@ -17,20 +17,18 @@ let getUrlParams = function (url) {
     return params;
 };
 
-// asynchronous function to get fetch products from JSON
+// asynchronous function to fetch products from JSON
 async function getProducts() {
 
     let products;
     let hasNavigationBar = false;
-    // get the id's
+    // get the ids
     let params = getUrlParams(window.location.href);
     let id = params.id; // main category id 
     let cid = params.c_id // sub-category id
     // fetch the data from local json file
-    // ***NOTE: Live Server Extension should be 
-    // installed for fetching local JSON.
-    const response = await fetch("../assets/JSON/exotic-parts.json");
-    //convert the response in JSON format
+    const response = await fetch("../assets/JSON/decent-parts.json");
+    //convert the response to JSON format
     const categories = await response.json();
 
     categories.forEach(category => {
@@ -39,13 +37,8 @@ async function getProducts() {
         let sub_categories = category.autoSubPart;
 
         sub_categories.forEach(sub_cat => {
-            // console.log("subcat: " + sub_cat.c_id);
             if (category.id == id && sub_cat.c_id == cid) {
-                // console.log(category.id + " ---- " + sub_cat.c_id);
                 products = sub_cat.products;
-                // console.log(products);
-
-                // set the navigation bar towards the category
                 document.querySelector(".product-navigation").innerHTML = products.map(product => {
                     if (!hasNavigationBar) {
                         hasNavigationBar = true;
@@ -55,7 +48,7 @@ async function getProducts() {
                     }
                 }).join('');
 
-                // set the products information into the UI 
+                // Display the product information in the UI 
                 document.querySelector(".products-container").innerHTML = products.map(product => {
                     return `
                         <div class="col-md-4">
@@ -67,7 +60,7 @@ async function getProducts() {
                             </div>
                             <div class="product-bottom text-center">
                                  <h4 class="product-name">${product.name}</h4>
-                                 <p class="sec-product-price">${product.price} RS.</p>
+                                 <p class="sec-product-price">${product.price} TK.</p>
                             </div>
                         </div>`;
                 }).join('');
@@ -81,19 +74,17 @@ async function getProducts() {
     });
 }
 
-/*
- * function for setting the product quantity on cart icon
- */
+// Function to display the product quantity on the cart icon
 function showQuantity() {
 
     let userCart = document.getElementById("user-cart");
     let totalQuantity = 0; //set initial quantity to 0
 
-    // get all products ftom localStorage
+    // get all products from localStorage
     let cartCurrentProducts = JSON.parse(localStorage.getItem("products"));
 
     if (cartCurrentProducts !== null) {
-        // loop through adding all products quantity
+        // Increment the product quantity
         cartCurrentProducts.forEach(cartCurrentProduct => {
             totalQuantity += cartCurrentProduct.product_quantity;
         });
@@ -107,21 +98,18 @@ function showQuantity() {
         }
     };
 
-    // setting the total quantity on UI - cart icon
+    // Display the total product quantity on the cart icon
     document.querySelector(".total-quantity").innerHTML = `<span>${totalQuantity}</span>`;
 
 }
 
-// function to check if user is login or not
+// function to check if user is logged in or not
 function loginStatus() {
 
-    // get login/signin anchor tag 
     const login = document.getElementById("loggedIn");
-
-    // get loggedin user from local storage
     const user = JSON.parse(localStorage.getItem("loggedInUser"));
 
-    //if user is login then change the text into logout
+    //if user is logged in then change the text to logout, otherwise show login/signup
     if (user !== null) {
         login.innerHTML = "Logout";
     }
@@ -129,19 +117,15 @@ function loginStatus() {
         login.innerHTML = "Login / Sign Up";
     }
 
-    /* 
-     * logout the user from website when logout button is clicked
-     * otherwise redirect the user to login/signup form
-     */
+    // Log the user out from website when logout button is clicked
     document.querySelector(".login-btn").onclick = function () {
 
-        // if user already login
         if (login.innerHTML == "Logout") {
             localStorage.removeItem("loggedInUser");
 
-            // show sweet alert message to user about logout
+            // show alert message to user when logging out
             swal("Logging Out...", "Your account will be logged out!", "success");
-            loginStatus(); //reflect the ui after logout
+            loginStatus();
         }
         else {
             document.querySelector(".login-btn").href = "form.html";
@@ -149,12 +133,12 @@ function loginStatus() {
     };
 }
 
-// check login / logout status
+// check login/logout status
 loginStatus();
 
 
-//function calling - get products
+//function call to get products
 getProducts();
 
-// set the quantity values on cart icon
+// Show the product quantity on cart icon
 showQuantity();

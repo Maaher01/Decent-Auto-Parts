@@ -7,15 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Cart</title>
 
-    <!-- add icon link -->
-    <link rel="icon" href="../assets/images/website-images/logo.png" type="image/x-icon">
-
-    <!--bootsrap  Styles sheet  -->
+    <!--bootsrap style sheet-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <!-- style sheet for complete website -->
-    <link rel="stylesheet" href="../assets/css/exotic-parts.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 
 
     <!-- font family Montserrat and roboto slab -->
@@ -35,14 +32,11 @@
     </div>
     <main class="cart-body">
         <header class="header">
-            <!-- first nav bar with anchor tags  contains logo, about, contact us , login and add to cart -->
+            <!-- first navbar contains about, contact us, login and add to cart -->
             <nav class="navbar navbar-expand-lg fixed-top p-0 font-weight-bold mb-4">
 
                 <!-- Navbar brand -->
-                <a href="../index.html">
-                    <img class="navbar-brand pt-0 ml-3" src="../assets/images/website-images/logo.png"
-                        alt="exotic parts logo" width="85em">
-                </a>
+                <a class="navbar-brand" href="index.html">DECENT AUTO PARTS</a>
 
                 <!-- Collapse button -->
                 <button class="navbar-toggler toggler-example navbar-light" type="button" data-toggle="collapse"
@@ -75,7 +69,8 @@
                                         </g>
                                     </svg>
                                 </span>
-                                <span>About Us</span></a>
+                                <span>About Us</span>
+                            </a>
                         </li>
                         <!-- Blog -->
                         <li class="nav-item  pl-4 pl-lg-0 pl-md-4 pl-sm-4">
@@ -92,7 +87,8 @@
                                             d="M28.99,18.48C29,18.76,28.77,19,28.48,19H26.5c-0.28,0-0.5-0.22-0.5-0.5h-0.02C25.74,12.27,20.73,7.26,14.5,7.02V7 C14.22,7,14,6.78,14,6.5V4.52c0-0.29,0.24-0.52,0.52-0.51C22.38,4.28,28.72,10.62,28.99,18.48z" />
                                     </svg>
                                 </span>
-                                <span>Blog</span></a>
+                                <span>Blog</span>
+                            </a>
                         </li>
                         <!-- contact us -->
                         <li class="nav-item pl-4 pl-lg-0 pl-md-4 pl-sm-4">
@@ -115,7 +111,8 @@
                                         </g>
                                     </svg>
                                 </span>
-                                <span>Contact Us</span></a>
+                                <span>Contact Us</span>
+                            </a>
                             </a>
                         </li>
                     </ul>
@@ -140,7 +137,8 @@
                                             </g>
                                         </g>
                                     </svg></span>
-                                <span id="loggedIn">Login / Sign Up</span></a>
+                                <span id="loggedIn">Login / Sign Up</span>
+                            </a>
                             </a>
                         </li>
                         <li class="nav-item  pl-4 pl-lg-0 pl-md-4 pl-sm-4">
@@ -162,16 +160,13 @@
                     </ul>
                 </div>
             </nav>
-            <!-- /first Nav bar -->
-            <!-- second Nav bar  shows all the categories for auto parts-->
+            <!-- first navbar -->
+            <!-- second navbar shows all the categories for auto parts-->
             <nav class="category-navbar d-none d-lg-inline d-md-inline d-sm-none ">
                 <ul
                     class="d-flex justify-content-around align-items-center list-unstyled mx-5 my-3 my-lg-0 my-md-0 my-sm-3 py-2 rounded-pill font-weight-bold">
                     <li class="dropdown">
-                        <!-- brand logo -->
-                        <span>
-                            <img src="../assets/images/website-images/logo-crop.png" alt="" width="50px">
-                            <span class="font-weight-bolder text-white">SHOP BY CATEGORIES:</span></span>
+                        <span><span class="font-weight-bolder text-white">SHOP BY CATEGORIES:</span></span>
                     </li>
                     <li class="dropdown">
                         <!-- first category -->
@@ -201,7 +196,7 @@
                         </div>
                     </li>
                     <li class=" dropdown ">
-                        <!-- 3rd category -->
+                        <!-- third category -->
                         <a class="dropdown-toggle text-decoration-none text-white" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"> Interior</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -262,21 +257,18 @@
                             <div class="rounded-pill px-4 py-3 text-uppercase font-weight-bold cart-head">Order summary
                             </div>
                             <div class="p-4">
-                                <p class="font-italic mb-4">
-                                    In Case of late shipping from 24 hours, 10% discount will be given on total bill.
-                                </p>
                                 <ul class="list-unstyled mb-4">
                                     <li class="d-flex justify-content-between py-3 border-bottom"><strong
                                             class="text-muted">Order Subtotal </strong><strong
-                                            class="sub-total-bill">10,300 RS.</strong></li>
+                                            class="sub-total-bill">10,300 TK.</strong></li>
                                     <li class="d-flex justify-content-between py-3 border-bottom"><strong
                                             class="text-muted">Shipping and handling</strong><strong>FREE</strong>
                                     </li>
                                     <li class="d-flex justify-content-between py-3 border-bottom"><strong
-                                            class="text-muted">Tax</strong><strong>0 RS.</strong></li>
+                                            class="text-muted">Tax</strong><strong>0 TK.</strong></li>
                                     <li class="d-flex justify-content-between py-3 border-bottom"><strong
                                             class="text-muted">Total</strong>
-                                        <h5 class="font-weight-bold total-bill">10,300 RS.</h5>
+                                        <h5 class="font-weight-bold total-bill">10,300 TK.</h5>
                                     </li>
                                 </ul><a href="#" id="checkoutbtn" class="btn rounded-pill py-2 btn-block"
                                     data-toggle="modal" data-target="#myModal">Proceed to checkout</a>
@@ -288,9 +280,6 @@
                                 details
                             </div>
                             <div class="p-4">
-                                <p class="font-italic mb-4">Please fill out all the fields in order to receive your
-                                    order
-                                </p>
                                 <div class="contact-wrap">
                                     <form class="needs-validation" novalidate>
                                         <div class="form-group">
@@ -350,13 +339,10 @@
             <div class="modal-content">
                 <!-- modal header -->
                 <div class="modal-header">
-                    <div>
-                        <img src="../assets/images/website-images/logo.png" width="100em">
-                    </div>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <!-- end modal header-->
-                <h4 class="card-title cart-modal-title">Your order is about to be place!</h4>
+                <h4 class="card-title cart-modal-title">Your order has been placed!</h4>
                 <!-- modal body -->
                 <div class="modal-body">
                     <h4>Checkout Details</h4>
@@ -386,7 +372,7 @@
                                 <strong class="text-muted">Delivery Time</strong><strong id="delivery-time">0</strong>
                             </li>
                             <li class="d-flex justify-content-between py-3 border-bottom">
-                                <strong class="text-muted">Price after late delivery</strong><strong
+                                <strong class="text-muted">Price if late delivery</strong><strong
                                     class="checkout-discount-bill">0</strong>
                             </li>
                         </ul>
@@ -404,12 +390,12 @@
         <!-- end modal dialog-->
     </div>
 
-    <!-- footer conatins 3 columns-->
+    <!-- footer columns-->
     <footer>
         <section class="pb-3 footer-section">
             <section class="mt-5 d-flex container justify-content-between align-items-top flex-wrap">
                 <div id="contact-us">
-                    <!-- contact us 1st column -->
+                    <!-- contact us -->
                     <ul class="container list-unstyled">
                         <li>
                             <h6 class="font-weight-bold">Contact Us</h6>
@@ -430,45 +416,37 @@
                                         </g>
                                     </g>
                                 </svg></span>
-                            <!-- about contains anchor libk direct to the about us sections -->
-                            <a href="../index.html#about-us" class="text-decoration-none"> About</a> </li>
+                            <!-- about us contains an anchor link that directs the user to the about us section -->
+                            <a href="../index.html#about-us" class="text-decoration-none"> About</a>
+                        </li>
                         <!-- address -->
-                        <li><span><i class="fas fa-map-marker-alt"></i></span> Address: <br>Shop#8 Auto Parts
-                            road,
-                            Karachi-75650, Pakistan</li>
+                        <li><span><i class="fas fa-map-marker-alt"></i></span> Address: <br> Dholaikhal, Shop No. 31
+                        </li>
                         <!-- phone number -->
-                        <li><span><i class="fas fa-phone-alt"></i></span> Phone No: <br> +92312345678</li>
-                        <!-- email onclick directs to the given email address -->
+                        <li><span><i class="fas fa-phone-alt"></i></span> Phone No: <br> +8801*********</li>
+                        <!-- email address -->
                         <li><span><i class="fas fa-envelope"></i></span> Email: <address class="mb-0"><a
-                                    href="mailto:exoticparts@gmail.com"
-                                    class="text-decoration-none">exoticparts@gmail.com</a>
+                                    href="mailto:project@gmail.com" class="text-decoration-none">project@gmail.com</a>
                             </address>
                         </li>
                         <!-- facebook -->
-                        <li><span><i class="fab fa-facebook-f"></i></span><a href="https://www.facebook.com/ExoticParts"
-                                class="text-decoration-none">
+                        <li><span>Facebook Page: <br><i class="fab fa-facebook-f"></i></span><a
+                                href="https://www.facebook.com/project" class="text-decoration-none">
                                 Facebook</a>
-                        </li>
-                        <!-- instagram -->
-                        <li><span><i class="fab fa-instagram"></i></span> <a
-                                href="https://www.instagram.com/ExoticParts/" class="text-decoration-none">
-                                Instagram</a></li>
                     </ul>
                 </div>
-                <!-- sort by categories second column -->
+                <!-- categories column -->
                 <div>
                     <ul class="list-unstyled container">
                         <li>
-                            <h6 class="font-weight-bold">Sort by Categories</h6>
+                            <h6 class="font-weight-bold">Categories</h6>
                         </li>
-                        <!-- all 4 categories direct the user to their respective category page -->
-                        <li><span></span><a href="../index.html#1" class="text-decoration-none">Tyre and Wheels</a></li>
-                        <li><span></span><a href="../index.html#2" class="text-decoration-none">Exterior</a></li>
-                        <li><span></span><a href="../index.html#3" class="text-decoration-none">Interior</a></li>
-                        <li><span></span><a href="../index.html#4" class="text-decoration-none">Car Parts</a></li>
+                        <li><span></span><a href="#1" class="text-decoration-none">Tyres and Wheels</a></li>
+                        <li><span></span><a href="#2" class="text-decoration-none">Exterior</a></li>
+                        <li><span></span><a href="#3" class="text-decoration-none">Interior</a></li>
+                        <li><span></span><a href="#4" class="text-decoration-none">Car Parts</a></li>
                     </ul>
                 </div>
-                <!-- this part contain content why user choose exotic parts 3rd column contains (2 ul elements) -->
                 <div>
                     <!-- 1st ul -->
                     <ul class="list-unstyled container">
@@ -488,17 +466,17 @@
                                         </g>
                                     </g>
                                 </svg></span>
-                            <h6 class="d-inline font-weight-bold">Get 10% Discount on late delivery</h6>
+                            <h6 class="d-inline font-weight-bold">Great Discounts!</h6>
                         </li>
                         <li>
-                            <p>Don't let your auto die, buy exotic parts!</p>
+                            <p>Exclusive Products</p>
                         </li>
 
                         <li>
-                            <p>Big range of genuine products</p>
+                            <p>Authentic products</p>
                         </li>
                         <li>
-                            <p>Deliver at door steps</p>
+                            <p>Quick Delivery</p>
                         </li>
 
                     </ul>
@@ -523,7 +501,7 @@
                             <h6 class="d-inline font-weight-bold">Easy Online Shopping</h6>
                         </li>
                         <li>
-                            <p>Get all Your Autoparts</p>
+                            <p>Get all Your auto parts</p>
 
                         </li>
 
@@ -541,7 +519,7 @@
         <!-- copyright section -->
         <div class="w-100 copyright-section">
             <small class="ml-5">
-                &copy; Copyright 2020 Exotic Parts.This website is developed for learning purpose.
+                &copy Copyright 2021
             </small>
         </div>
     </footer>
