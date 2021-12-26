@@ -266,42 +266,6 @@ checkoutbtn.addEventListener('click', () => {
   deliverytime.innerText = tomorrowDate + ' ' + currentTime;
 });
 
-// function to check if user is logged in or not
-function loginStatus() {
-
-  const login = document.getElementById("loggedIn");
-
-  // get loggedin users from local storage
-  const user = JSON.parse(localStorage.getItem("loggedInUser"));
-
-  //if user is logged in then change the text into logout, otherwise show login/signup
-  if (user !== null) {
-    login.innerHTML = "Logout";
-  }
-  else {
-    login.innerHTML = "Login / Sign Up";
-  }
-
-  /* 
-  * Log the user out from website when logout button is clicked.
-  * Otherwise redirect the user to login/signup form
-  */
-  document.querySelector(".login-btn").onclick = function () {
-
-    // if user already login
-    if (login.innerHTML == "Logout") {
-      localStorage.removeItem("loggedInUser");
-
-      // show sweet alert message to user about logout
-      swal("Logging Out...", "Your account will be logged out!", "success");
-      loginStatus(); //reflect the ui after logout
-    }
-    else {
-      document.querySelector(".login-btn").href = "form.html";
-    }
-  };
-}
-
 
 // form validation
 (function () {
@@ -321,10 +285,7 @@ function loginStatus() {
 })();
 
 
-/******************** Functions Call *******************/
-
-// check login/logout status
-loginStatus();
+/******************** Function Calls *******************/
 
 // Show the product quantity on cart icon
 showCartProducts();

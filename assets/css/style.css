@@ -152,148 +152,6 @@ footer a:hover {
   text-align: center;
 }
 
-/* form page styling */
-
-/* form body color */
-#form-bg{
-  background-color: var(--blue-color);
-}
-
-#form-bg:before{
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  position:absolute;
-  top:0;
-  left:0;
-  background-image: url('../images/website-images/Auto-Parts-Accessories-bg-image.jpg');
-  opacity: 0.1;
-}
-
-
-#login {
-  left: "50px";
-}
-#signup {
-  left: -450px;
-}
-#butn-div {
-  left: "0px";
-}
-
-/* form styling */
-.wrapper {
-  width: 380px;
-  height: 550px;
-  margin: 2% auto;
-  position: relative;
-  padding: 5px;
-  overflow: hidden;
-  background-color: var(--light-color);
-  border-radius: 30px;
-  box-shadow: 2px 11px 21px 14px rgba(0, 0, 0, 0.9);
-}
-/* styling of button */
-.button {
-  width: 220px;
-  margin: 35px auto;
-  position: relative;
-  box-shadow: 0px 0px 20px 0 var(--lightBlue-color);
-  border-radius: 30px;
-  background-color: var(--blue-color);
-
-}
-/* form button styling  */
-.toggle-butn {
-  padding: 10px 30px;
-  cursor: pointer;
-  outline: none;
-  background-color: transparent;
-  border: 0;
-  position: relative;
-  font-weight: 600;
-  color: var(--light-color);
-}
-/* for toggle button  */
-#butn-div {
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 110px;
-  height: 110%;
-  transition: 0.5s;
-  border-radius: 30px;
-  background: var(--red-color);
-}
-
-.form-container form {
-  top: 100px;
-  position: absolute;
-  width: 280px;
-  transition: 0.5s;
-  left: 50px;
-}
-/* input field  */
-.input-field {
-  width: 90%;
-  padding: 5px 10px;
-  border: none;
-  background-color: transparent;
-  outline: none;
-  margin: 20px auto 5px auto;
-}
-.form-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid var(--red-color);
-}
-.form-icon > i {
-  height: 0px;
-}
-.submit-btn {
-  border: none;
-  padding: 10px 30px;
-  background: var(--light-color);
-  width: 100%;
-  display: block;
-  transition: 0.5s;
-  border-radius: 30px;
-  outline: none;
-  cursor: pointer;
-  font-weight: 800;
-  color: var(--red-color);
-  border: 1px solid var(--red-color);
-}
-.checkbox {
-  margin: 20px 10px 30px 0px;
-}
-.checkbox label {
-  font-size: 12px;
-  bottom: 68px;
-  position: absolute;
-}
-
-/* styling of error shown */
-.block {
-  display: block;
-  color: var(--red-color);
-}
-/* Tags containing error statements */
-#name-data,
-#email-data,
-#paswd-data,
-#confirmPaswd-data,
-#loginemail-data,
-#loginpaswd-data {
-  opacity: 0;
-}
-.fa-exclamation-circle span {
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-}
-
 /* Product Page styling */
 .container {
   margin-top: 50px;
@@ -333,8 +191,8 @@ footer a:hover {
   font-size: 15px;
   margin-left: 20px;
 }
-/* class for both cart icon and login btn */
-#user-cart, .login-btn{
+/* class for cart icon */
+#user-cart {
   cursor: pointer;
 }
 

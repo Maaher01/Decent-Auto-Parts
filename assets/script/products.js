@@ -103,40 +103,6 @@ function showQuantity() {
 
 }
 
-// function to check if user is logged in or not
-function loginStatus() {
-
-    const login = document.getElementById("loggedIn");
-    const user = JSON.parse(localStorage.getItem("loggedInUser"));
-
-    //if user is logged in then change the text to logout, otherwise show login/signup
-    if (user !== null) {
-        login.innerHTML = "Logout";
-    }
-    else {
-        login.innerHTML = "Login / Sign Up";
-    }
-
-    // Log the user out from website when logout button is clicked
-    document.querySelector(".login-btn").onclick = function () {
-
-        if (login.innerHTML == "Logout") {
-            localStorage.removeItem("loggedInUser");
-
-            // show alert message to user when logging out
-            swal("Logging Out...", "Your account will be logged out!", "success");
-            loginStatus();
-        }
-        else {
-            document.querySelector(".login-btn").href = "form.html";
-        }
-    };
-}
-
-// check login/logout status
-loginStatus();
-
-
 //function call to get products
 getProducts();
 
