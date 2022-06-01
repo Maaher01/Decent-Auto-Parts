@@ -6,6 +6,6 @@ This is a simple e-commerce website, where customers can easily buy a wide range
 ## Customers can:
 
 - Select automobile parts from different categories
-- View Details of each product
+- View details of each product
 - Add products to cart
 - Proceed to checkout
